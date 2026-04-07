@@ -11,12 +11,11 @@
     <meta property="og:type" content="website">
     <title>Antonio Moro - Ingeniero de Datos | Data Engineer</title>
     <link rel="canonical" href="https://antonio-moro.es/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
             --primary: #0f172a;
@@ -25,29 +24,44 @@
             --dark: #0f172a;
             --light: #f8fafc;
             --text: #1e293b;
+            --text-muted: #64748b;
             --border: #e2e8f0;
             --success: #22c55e;
             --warning: #f59e0b;
             --gradient-1: linear-gradient(135deg, #0f172a 0%, #0ea5e9 100%);
             --gradient-2: linear-gradient(135deg, #0ea5e9 0%, #10b981 100%);
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.10), 0 4px 10px rgba(0,0,0,0.04);
+            --shadow-xl: 0 20px 40px rgba(0,0,0,0.14);
+            --radius-sm: 0.5rem;
+            --radius-md: 0.75rem;
+            --radius-lg: 1rem;
+            --radius-xl: 1.5rem;
+            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
+        html { scroll-behavior: smooth; }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
             background: var(--light);
             color: var(--text);
-            line-height: 1.6;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
         }
+
+        h1, h2, h3, h4 { font-weight: 700; line-height: 1.3; letter-spacing: -0.02em; }
 
         /* Header & Navigation */
         header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, #1e3a5f 100%);
             color: white;
-            padding: 1rem 2rem;
+            padding: 0.875rem 2rem;
             position: sticky;
             top: 0;
-            z-index: 100;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.2);
         }
 
         nav {
@@ -95,23 +109,28 @@
         }
 
         nav a {
-            color: white;
+            color: rgba(255,255,255,0.9);
             text-decoration: none;
-            transition: opacity 0.3s;
-            font-size: 0.95rem;
+            transition: var(--transition);
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 0.25rem 0;
+            border-bottom: 2px solid transparent;
         }
 
         nav a:hover {
-            opacity: 0.8;
+            color: white;
+            border-bottom-color: var(--accent);
+            opacity: 1;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #0f172a 0%, #0ea5e9 50%, #10b981 100%);
+            background: linear-gradient(135deg, #0f172a 0%, #0c4a6e 50%, #064e3b 100%);
             color: white;
-            padding: 5rem 2rem;
+            padding: 5rem 2rem 4rem;
             text-align: center;
-            min-height: 500px;
+            min-height: 540px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -122,37 +141,76 @@
         .hero::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="10" cy="10" r="1" fill="white" opacity="0.05"/><circle cx="50" cy="50" r="1" fill="white" opacity="0.05"/><circle cx="90" cy="90" r="1" fill="white" opacity="0.05"/></svg>');
-            opacity: 0.1;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
 
         .hero-content {
             position: relative;
             z-index: 1;
+            max-width: 820px;
         }
 
         .hero-content h1 {
-            font-size: 3rem;
+            font-size: 3.2rem;
+            font-weight: 800;
             margin-bottom: 0.5rem;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            background: linear-gradient(135deg, #fff 0%, #e0f2fe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .hero-content .title {
-            font-size: 1.8rem;
-            color: #e0f2fe;
+            font-size: 1.5rem;
+            color: #7dd3fc;
             margin-bottom: 1rem;
-            font-weight: 300;
+            font-weight: 400;
         }
 
         .hero-content p {
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 1.5rem auto;
-            color: #f0f9ff;
+            font-size: 1.05rem;
+            max-width: 620px;
+            margin: 0 auto 2.5rem;
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* Hero Stats */
+        .hero-stats {
+            display: flex;
+            gap: 1.25rem;
+            justify-content: center;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-stat {
+            text-align: center;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            padding: 1rem 1.5rem;
+            border-radius: var(--radius-lg);
+            min-width: 100px;
+            transition: var(--transition);
+        }
+
+        .hero-stat:hover { background: rgba(255,255,255,0.15); transform: translateY(-2px); }
+
+        .hero-stat .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent);
+            display: block;
+            line-height: 1;
+        }
+
+        .hero-stat .stat-label {
+            font-size: 0.72rem;
+            color: rgba(255,255,255,0.65);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-top: 0.25rem;
+            display: block;
         }
 
         .cta-buttons {
@@ -164,36 +222,56 @@
         }
 
         .btn {
-            padding: 0.75rem 1.5rem;
+            padding: 0.75rem 1.75rem;
             border: none;
-            border-radius: 0.5rem;
+            border-radius: var(--radius-sm);
             cursor: pointer;
-            font-size: 1rem;
-            transition: all 0.3s;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: var(--transition);
             text-decoration: none;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            letter-spacing: 0.01em;
         }
 
         .btn-primary {
             background: white;
             color: var(--primary);
-            font-weight: bold;
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
         }
 
         .btn-secondary {
             background: transparent;
             color: white;
-            border: 2px solid white;
+            border: 2px solid rgba(255,255,255,0.6);
         }
 
         .btn-secondary:hover {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.12);
+            border-color: white;
         }
+
+        .btn-accent { background: var(--accent); color: white; }
+        .btn-accent:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(16,185,129,0.35); }
+        .btn-pdf {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            font-size: 0.8rem;
+            padding: 0.45rem 1rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            border-color: transparent !important;
+            gap: 0.35rem;
+            display: inline-flex;
+            align-items: center;
+        }
+        .btn-pdf:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(16,185,129,0.45); }
 
         /* Main Container */
         main {
@@ -212,6 +290,7 @@
             color: var(--primary);
             position: relative;
             padding-bottom: 1rem;
+            letter-spacing: -0.02em;
         }
 
         h2::after {
@@ -221,7 +300,8 @@
             left: 0;
             width: 50px;
             height: 3px;
-            background: var(--accent);
+            background: var(--gradient-2);
+            border-radius: 2px;
         }
 
         /* About Section */
@@ -979,6 +1059,140 @@
         body.dark-mode h4 {
             color: #10b981;
         }
+
+        /* ===== SKILL BARS ===== */
+        .skills-bars { display: flex; flex-direction: column; gap: 1rem; margin: 1.25rem 0; }
+        .skill-bar-item {}
+        .skill-bar-header { display: flex; justify-content: space-between; margin-bottom: 0.35rem; }
+        .skill-bar-header span { font-size: 0.875rem; font-weight: 600; color: var(--text); }
+        .skill-bar-header .pct { color: var(--text-muted); font-size: 0.8rem; }
+        .skill-bar-track { height: 7px; background: var(--border); border-radius: 4px; overflow: hidden; }
+        .skill-bar-fill { height: 100%; background: var(--gradient-2); border-radius: 4px; width: 0; transition: width 1.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+        body.dark-mode .skill-bar-track { background: #2a2a4a; }
+        body.dark-mode .skill-bar-header span { color: #e0e0e0; }
+
+        /* ===== SERVICES SECTION ===== */
+        .services-intro { text-align: center; max-width: 660px; margin: -1rem auto 2.5rem; color: var(--text-muted); font-size: 1.05rem; line-height: 1.75; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
+        .service-card {
+            background: white; border-radius: var(--radius-lg); padding: 2rem;
+            box-shadow: var(--shadow-sm); border: 2px solid var(--border);
+            transition: var(--transition); position: relative; overflow: hidden;
+        }
+        .service-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+            background: var(--gradient-2); transform: scaleX(0); transition: transform 0.35s ease;
+        }
+        .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: var(--secondary); }
+        .service-card:hover::before { transform: scaleX(1); }
+        .service-card.featured { border-color: var(--accent); background: linear-gradient(135deg, #f0fdf4, #ecfdf5); }
+        .service-card.featured::before { transform: scaleX(1); }
+        .service-icon { width: 54px; height: 54px; background: linear-gradient(135deg, #e0f2fe, #d1fae5); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1.25rem; }
+        .service-card h3 { color: var(--primary); margin-bottom: 0.75rem; font-size: 1.1rem; }
+        .service-card p { color: var(--text-muted); font-size: 0.875rem; line-height: 1.65; margin-bottom: 1.25rem; }
+        .service-features { list-style: none; margin-bottom: 1.5rem; }
+        .service-features li { font-size: 0.83rem; color: var(--text-muted); padding: 0.2rem 0; display: flex; align-items: flex-start; gap: 0.5rem; }
+        .service-features li::before { content: '✓'; color: var(--accent); font-weight: 700; flex-shrink: 0; }
+        .service-cta { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--secondary); font-size: 0.875rem; font-weight: 700; text-decoration: none; transition: var(--transition); }
+        .service-cta:hover { color: var(--primary); gap: 0.65rem; }
+        .service-cta::after { content: '→'; }
+        body.dark-mode .service-card { background: #16213e; border-color: #0f3460; }
+        body.dark-mode .service-card h3 { color: #7dd3fc; }
+        body.dark-mode .service-card p, body.dark-mode .service-features li { color: #b0b0b0; }
+        body.dark-mode .service-card.featured { background: linear-gradient(135deg, #0d2818, #052e16); border-color: var(--accent); }
+
+        /* ===== FULL BLOG SECTION ===== */
+        .blog-toprow { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-bottom: 0.5rem; }
+        .blog-intro-text { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; max-width: 600px; }
+        .blog-filters { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+        .filter-btn { padding: 0.4rem 1rem; border-radius: 20px; border: 2px solid var(--border); background: white; color: var(--text-muted); font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: var(--transition); }
+        .filter-btn:hover { border-color: var(--secondary); color: var(--secondary); }
+        .filter-btn.active { background: var(--secondary); border-color: var(--secondary); color: white; }
+        .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.75rem; }
+        .blog-card { background: white; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); transition: var(--transition); display: flex; flex-direction: column; cursor: pointer; }
+        .blog-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+        .blog-card-header { padding: 1.5rem 1.75rem 1rem; background: linear-gradient(135deg, #f8fafc, #f1f5f9); border-bottom: 1px solid var(--border); }
+        .blog-cat-pill { display: inline-flex; align-items: center; gap: 0.35rem; background: white; color: var(--secondary); border: 1.5px solid #bae6fd; padding: 0.22rem 0.7rem; border-radius: 20px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.875rem; }
+        .blog-card-title { font-size: 1.05rem; font-weight: 700; color: var(--primary); line-height: 1.4; }
+        .blog-card-body { padding: 1.1rem 1.75rem; flex: 1; }
+        .blog-card-excerpt { font-size: 0.855rem; color: var(--text-muted); line-height: 1.7; }
+        .blog-card-footer { padding: 0.875rem 1.75rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+        .blog-card-meta { font-size: 0.76rem; color: #94a3b8; display: flex; align-items: center; gap: 1rem; }
+        .blog-read-more { font-size: 0.8rem; font-weight: 700; color: var(--secondary); transition: var(--transition); display: flex; align-items: center; gap: 0.3rem; }
+        .blog-card:hover .blog-read-more { color: var(--primary); gap: 0.55rem; }
+
+        /* Admin panel */
+        .blog-admin-btn { background: linear-gradient(135deg, var(--primary), #1e40af); color: white; border: none; padding: 0.6rem 1.2rem; border-radius: var(--radius-sm); cursor: pointer; font-size: 0.82rem; font-weight: 600; transition: var(--transition); display: flex; align-items: center; gap: 0.4rem; }
+        .blog-admin-btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+        .blog-admin-panel { background: white; border: 2px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; margin-bottom: 2rem; display: none; }
+        .blog-admin-panel.open { display: block; animation: slideDown 0.3s ease; }
+        .blog-admin-panel h3 { color: var(--primary); margin-bottom: 1.25rem; }
+        .admin-form { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .admin-form .full-w { grid-column: 1 / -1; }
+        .admin-form label { font-size: 0.76rem; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 0.3rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .admin-form input, .admin-form select, .admin-form textarea { width: 100%; padding: 0.6rem 0.875rem; border: 2px solid var(--border); border-radius: var(--radius-sm); font-family: inherit; font-size: 0.875rem; color: var(--text); background: var(--light); transition: var(--transition); }
+        .admin-form input:focus, .admin-form select:focus, .admin-form textarea:focus { outline: none; border-color: var(--secondary); background: white; }
+        .admin-form textarea { min-height: 130px; resize: vertical; }
+        .admin-actions { grid-column: 1 / -1; display: flex; gap: 0.75rem; justify-content: flex-end; margin-top: 0.5rem; }
+        .btn-outline { background: transparent; border: 2px solid var(--accent); color: var(--accent); padding: 0.6rem 1.25rem; border-radius: var(--radius-sm); cursor: pointer; font-size: 0.875rem; font-weight: 600; transition: var(--transition); }
+        .btn-outline:hover { background: var(--accent); color: white; }
+
+        /* Blog modal */
+        .blog-modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.75); z-index: 2000; display: none; align-items: center; justify-content: center; padding: 2rem; backdrop-filter: blur(4px); }
+        .blog-modal-overlay.open { display: flex; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .blog-modal { background: white; border-radius: var(--radius-xl); max-width: 780px; width: 100%; max-height: 85vh; overflow-y: auto; box-shadow: var(--shadow-xl); animation: slideUp 0.3s ease; }
+        .blog-modal-head { padding: 2rem 2rem 1.5rem; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: white; z-index: 1; }
+        .blog-modal-close { float: right; background: var(--border); border: none; width: 30px; height: 30px; border-radius: 50%; cursor: pointer; font-size: 0.95rem; display: flex; align-items: center; justify-content: center; transition: var(--transition); color: var(--text-muted); }
+        .blog-modal-close:hover { background: #ef4444; color: white; }
+        .blog-modal-title { font-size: 1.5rem; color: var(--primary); line-height: 1.35; margin-top: 0.5rem; }
+        .blog-modal-meta { font-size: 0.8rem; color: #94a3b8; margin-top: 0.75rem; display: flex; gap: 1.5rem; flex-wrap: wrap; }
+        .blog-modal-body { padding: 2rem; }
+        .blog-modal-body p { color: var(--text-muted); line-height: 1.8; margin-bottom: 1.25rem; font-size: 0.95rem; }
+        .blog-modal-body h3 { color: var(--primary); font-size: 1.15rem; margin: 1.75rem 0 0.75rem; }
+        .blog-modal-body h4 { color: var(--text); font-size: 1rem; margin: 1.25rem 0 0.5rem; }
+        .blog-modal-body ul { margin: 0.75rem 0 1.25rem 1.5rem; }
+        .blog-modal-body ul li { color: var(--text-muted); line-height: 1.8; font-size: 0.93rem; margin-bottom: 0.3rem; }
+        .blog-modal-body code { background: #f1f5f9; padding: 0.2rem 0.5rem; border-radius: 4px; font-family: 'Fira Code', monospace; font-size: 0.84em; color: #0f172a; }
+        .blog-modal-body pre { background: #0f172a; color: #e2e8f0; padding: 1.25rem; border-radius: var(--radius-md); overflow-x: auto; margin: 1rem 0 1.5rem; font-size: 0.84rem; line-height: 1.6; }
+        .blog-modal-body pre code { background: none; padding: 0; color: inherit; font-size: inherit; }
+        .blog-modal-body blockquote { border-left: 4px solid var(--accent); padding: 1rem 1.5rem; background: #f0fdf4; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; margin: 1.25rem 0; color: var(--text); font-style: italic; }
+        body.dark-mode .blog-card { background: #16213e; }
+        body.dark-mode .blog-card-header { background: #0f172a; border-color: #0f3460; }
+        body.dark-mode .blog-card-footer { border-color: #0f3460; }
+        body.dark-mode .blog-card-title { color: #93c5fd; }
+        body.dark-mode .blog-card-excerpt { color: #b0b0b0; }
+        body.dark-mode .filter-btn { background: #16213e; border-color: #0f3460; color: #8b949e; }
+        body.dark-mode .filter-btn.active { background: var(--secondary); border-color: var(--secondary); color: white; }
+        body.dark-mode .blog-admin-panel { background: #16213e; border-color: #0f3460; }
+        body.dark-mode .admin-form input, body.dark-mode .admin-form select, body.dark-mode .admin-form textarea { background: #0f172a; border-color: #0f3460; color: #e0e0e0; }
+        body.dark-mode .blog-modal { background: #16213e; }
+        body.dark-mode .blog-modal-head { background: #16213e; border-color: #0f3460; }
+        body.dark-mode .blog-modal-title { color: #e0e0e0; }
+        body.dark-mode .blog-modal-body p, body.dark-mode .blog-modal-body ul li { color: #b0b0b0; }
+        body.dark-mode .blog-modal-body h3 { color: #e0e0e0; }
+        body.dark-mode .blog-modal-body code { background: #0f172a; color: #7dd3fc; }
+        body.dark-mode .blog-modal-body blockquote { background: #052e16; color: #e0e0e0; }
+
+        /* ===== FOOTER REDESIGN ===== */
+        .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
+        .footer-left .footer-logo { font-size: 1.4rem; font-weight: 800; letter-spacing: 2px; margin-bottom: 0.35rem; }
+        .footer-left p { font-size: 0.82rem; color: rgba(255,255,255,0.6); }
+
+        /* Scroll to top */
+        .scroll-top { position: fixed; bottom: 2rem; right: 2rem; width: 42px; height: 42px; background: var(--secondary); color: white; border: none; border-radius: 50%; cursor: pointer; font-size: 1.2rem; display: none; align-items: center; justify-content: center; box-shadow: var(--shadow-lg); transition: var(--transition); z-index: 999; }
+        .scroll-top.visible { display: flex; }
+        .scroll-top:hover { background: var(--primary); transform: translateY(-2px); }
+
+        /* Fade-in animation */
+        .fade-in-up { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .fade-in-up.visible { opacity: 1; transform: translateY(0); }
+
+        /* ===== PRINT / PDF STYLES ===== */
+        .print-only { display: none; }
+
+        @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body>
@@ -1013,6 +1227,10 @@
             </div>
             <div class="nav-right">
                 <div class="theme-lang-controls">
+                    <a href="AntonioMoro_CV.jpg" target="_blank" class="control-btn btn-pdf">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Descargar CV
+                    </a>
                     <div class="control-group">
                         <div class="language-selector">
                             <button class="control-btn lang-dropdown-btn" id="langDropdownBtn" title="Select Language">
@@ -1040,11 +1258,30 @@
     <section class="hero">
         <div class="hero-content">
             <h1>Antonio MORO DIAZ</h1>
-            <p class="title">Experto BI & Integración de Datos | Data Engineer</p>
+            <p class="title">Experto BI &amp; Integración de Datos | Data Engineer</p>
             <p>Especialista en diseño y optimización de procesos ETL, BI y soluciones cloud. Más de 20 años de experiencia en Data Analytics y liderazgo de equipos internacionales.</p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="stat-number">20+</span>
+                    <span class="stat-label">Años exp.</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Proyectos</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="stat-number">6</span>
+                    <span class="stat-label">Empresas</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">Idiomas</span>
+                </div>
+            </div>
             <div class="cta-buttons">
                 <a href="#contact" class="btn btn-primary">Contactarme</a>
-                <a href="https://www.linkedin.com/in/antonio-moro-diaz-62346213b/" target="_blank" class="btn btn-secondary">Mi LinkedIn</a>
+                <a href="#services" class="btn btn-accent">Mis Servicios</a>
+                <a href="https://www.linkedin.com/in/antonio-moro-diaz-62346213b/" target="_blank" class="btn btn-secondary">LinkedIn</a>
             </div>
         </div>
     </section>
@@ -1061,6 +1298,30 @@
                     <p>Tengo un sólido dominio en herramientas ETL (Informatica, Talend, dbt), BI (Power BI, Tableau) y tecnologías cloud (Azure, GCP). Mi objetivo es automatizar procesos, optimizar consultas SQL y crear soluciones escalables que impulsen la toma de decisiones estratégica en las organizaciones.</p>
                     <p><strong>Idiomas:</strong> Español (Nativo), Inglés (Intermedio), Francés (C2)</p>
                     <p><strong>Ubicación:</strong> Madrid, España</p>
+
+                    <h3 style="margin-top:1.5rem; margin-bottom:1rem;">Dominio Técnico</h3>
+                    <div class="skills-bars">
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-header"><span>ETL · Informatica · Talend · dbt</span><span class="pct">95%</span></div>
+                            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="95"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-header"><span>Power BI · Tableau · QlikView</span><span class="pct">92%</span></div>
+                            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="92"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-header"><span>SQL · Oracle · BigQuery</span><span class="pct">95%</span></div>
+                            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="95"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-header"><span>Python · Pandas · NumPy</span><span class="pct">78%</span></div>
+                            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="78"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-header"><span>Cloud · Azure · GCP</span><span class="pct">83%</span></div>
+                            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="83"></div></div>
+                        </div>
+                    </div>
                 </div>
                 <div>
                     <h3>Stack Tecnológico</h3>
@@ -1313,16 +1574,149 @@
             </div>
         </section>
 
+        <!-- Services Section -->
+        <section id="services">
+            <h2>Servicios de Consultoría</h2>
+            <p class="services-intro">¿Necesitas transformar tus datos en ventajas competitivas? Ofrezco consultoría especializada: desde la arquitectura hasta la visualización final.</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🔄</div>
+                    <h3>Auditoría &amp; Optimización ETL</h3>
+                    <p>Análisis completo de tus procesos ETL actuales, identificación de cuellos de botella y propuesta de mejoras con ROI medible.</p>
+                    <ul class="service-features">
+                        <li>Análisis de rendimiento de pipelines</li>
+                        <li>Detección de datos duplicados/erróneos</li>
+                        <li>Propuesta de arquitectura optimizada</li>
+                        <li>Roadmap de implementación</li>
+                    </ul>
+                    <a href="#contact" class="service-cta">Solicitar consulta</a>
+                </div>
+                <div class="service-card featured">
+                    <div class="service-icon">📊</div>
+                    <h3>Desarrollo BI &amp; Dashboards</h3>
+                    <p>Diseño y desarrollo de dashboards ejecutivos con Power BI o Tableau que convierten datos en decisiones de negocio claras y accionables.</p>
+                    <ul class="service-features">
+                        <li>Dashboards ejecutivos y KPIs</li>
+                        <li>Modelos semánticos optimizados (DAX)</li>
+                        <li>Informes automatizados</li>
+                        <li>Formación del equipo usuario</li>
+                    </ul>
+                    <a href="#contact" class="service-cta">Solicitar consulta</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏗️</div>
+                    <h3>Arquitectura de Datos</h3>
+                    <p>Diseño de arquitecturas modernas (DWH, Data Lake, Lakehouse) adaptadas a tus volúmenes, presupuesto y equipo.</p>
+                    <ul class="service-features">
+                        <li>Diseño DWH (Kimball / Data Vault)</li>
+                        <li>Estrategia cloud (Azure / GCP)</li>
+                        <li>Modelado dimensional</li>
+                        <li>Governance y calidad de datos</li>
+                    </ul>
+                    <a href="#contact" class="service-cta">Solicitar consulta</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">☁️</div>
+                    <h3>Migración a Cloud</h3>
+                    <p>Planificación y ejecución de migraciones on-premise a cloud con mínimo riesgo, máxima continuidad y validación rigurosa.</p>
+                    <ul class="service-features">
+                        <li>Assessment de sistemas actuales</li>
+                        <li>Estrategia de migración por fases</li>
+                        <li>Implementación Azure / GCP</li>
+                        <li>Pruebas y validación de datos</li>
+                    </ul>
+                    <a href="#contact" class="service-cta">Solicitar consulta</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3>Optimización SQL</h3>
+                    <p>Diagnóstico y optimización de consultas SQL críticas en Oracle, SQL Server o BigQuery. Mejoras medibles en días, no meses.</p>
+                    <ul class="service-features">
+                        <li>Análisis de query plans</li>
+                        <li>Optimización de índices y particionado</li>
+                        <li>Reescritura de queries críticas</li>
+                        <li>Mejoras sin rediseño de arquitectura</li>
+                    </ul>
+                    <a href="#contact" class="service-cta">Solicitar consulta</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎓</div>
+                    <h3>Formación &amp; Mentoring</h3>
+                    <p>Formación práctica y mentoring para equipos de datos en ETL, SQL avanzado, Power BI, dbt y buenas prácticas en Data Engineering.</p>
+                    <ul class="service-features">
+                        <li>Talleres Power BI / Tableau</li>
+                        <li>Taller SQL avanzado y optimización</li>
+                        <li>Introducción a dbt cloud</li>
+                        <li>Mentoring individual o grupal</li>
+                    </ul>
+                    <a href="#contact" class="service-cta">Solicitar consulta</a>
+                </div>
+            </div>
+        </section>
+
         <!-- Blog Section -->
         <section id="blog">
-            <h2>Blog Técnico</h2>
-            <div class="blog-section">
-                <h3>Artículos y Recursos Técnicos</h3>
-                <p style="margin-bottom: 2rem; color: #64748b;">Sígueme en LinkedIn para artículos sobre Data Engineering, arquitectura de datos, optimización de queries y mejores prácticas con Python, SQL y tecnologías cloud.</p>
-                <a href="https://www.linkedin.com/in/antonio-moro-diaz-62346213b/" target="_blank" class="blog-link">
-                    👔 Ver mi perfil en LinkedIn
-                </a>
+            <div class="blog-toprow">
+                <div>
+                    <h2>Blog Técnico</h2>
+                    <p class="blog-intro-text">Artículos sobre ETL, BI, SQL avanzado, arquitectura cloud y buenas prácticas en Data Engineering — fruto de 20+ años de experiencia real.</p>
+                </div>
+                <button class="blog-admin-btn" id="adminToggle">✏️ Publicar artículo</button>
             </div>
+
+            <!-- Admin Panel -->
+            <div class="blog-admin-panel" id="adminPanel">
+                <h3>✏️ Nuevo Artículo</h3>
+                <div class="admin-form">
+                    <div>
+                        <label for="artTitle">Título *</label>
+                        <input type="text" id="artTitle" placeholder="Título del artículo...">
+                    </div>
+                    <div>
+                        <label for="artCategory">Categoría *</label>
+                        <select id="artCategory">
+                            <option value="ETL">ETL &amp; Integración</option>
+                            <option value="BI">BI &amp; Visualización</option>
+                            <option value="SQL">SQL &amp; Bases de Datos</option>
+                            <option value="Cloud">Cloud &amp; Arquitectura</option>
+                            <option value="Tools">Herramientas</option>
+                        </select>
+                    </div>
+                    <div class="full-w">
+                        <label for="artExcerpt">Resumen (2-3 frases) *</label>
+                        <input type="text" id="artExcerpt" placeholder="Descripción breve visible en la tarjeta...">
+                    </div>
+                    <div class="full-w">
+                        <label for="artContent">Contenido completo * (HTML: &lt;p&gt; &lt;h3&gt; &lt;ul&gt; &lt;li&gt; &lt;code&gt; &lt;pre&gt; &lt;blockquote&gt;)</label>
+                        <textarea id="artContent" placeholder="Escribe el contenido del artículo..."></textarea>
+                    </div>
+                    <div>
+                        <label for="artReadTime">Tiempo de lectura (min)</label>
+                        <input type="number" id="artReadTime" value="5" min="1" max="60">
+                    </div>
+                    <div>
+                        <label for="artDate">Fecha de publicación</label>
+                        <input type="text" id="artDate" placeholder="ej: 15 Enero 2026">
+                    </div>
+                    <div class="admin-actions">
+                        <button class="btn-outline" onclick="document.getElementById('adminPanel').classList.remove('open')">Cancelar</button>
+                        <button class="btn btn-accent" onclick="saveArticle()">💾 Publicar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category Filters -->
+            <div class="blog-filters">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="ETL">ETL &amp; Integración</button>
+                <button class="filter-btn" data-filter="BI">BI &amp; Visualización</button>
+                <button class="filter-btn" data-filter="SQL">SQL &amp; BD</button>
+                <button class="filter-btn" data-filter="Cloud">Cloud &amp; Arq.</button>
+                <button class="filter-btn" data-filter="Tools">Herramientas</button>
+            </div>
+
+            <!-- Blog Cards Grid -->
+            <div class="blog-grid" id="blogGrid"></div>
         </section>
 
         <!-- Contact Section -->
@@ -1384,25 +1778,550 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Antonio MORO DIAZ - Experto BI & Integración de Datos</p>
-        <p>Diseño moderno y responsivo | Sitio web profesional</p>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/antonio-moro-diaz-62346213b/" target="_blank" title="LinkedIn">in</a>
-            <a href="mailto:a.morodiaz@hotmail.com" title="Email">✉️</a>
+        <div class="footer-inner">
+            <div class="footer-left">
+                <div class="footer-logo">MORO</div>
+                <p id="footerCopy">© 2026 Antonio MORO DIAZ — Experto BI &amp; Integración de Datos</p>
+                <p style="margin-top:0.2rem">Madrid, España · Disponible para proyectos remotos</p>
+            </div>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/antonio-moro-diaz-62346213b/" target="_blank" title="LinkedIn">in</a>
+                <a href="mailto:a.morodiaz@hotmail.com" title="Email">✉</a>
+                <a href="#blog" title="Blog">✍</a>
+            </div>
         </div>
     </footer>
 
+    <!-- Blog Article Modal -->
+    <div class="blog-modal-overlay" id="blogModal" onclick="closeBlogModalOutside(event)">
+        <div class="blog-modal">
+            <div class="blog-modal-head">
+                <button class="blog-modal-close" onclick="closeBlogModal()">✕</button>
+                <div id="modalCategory" class="blog-cat-pill"></div>
+                <h2 id="modalTitle" class="blog-modal-title" style="padding:0;margin:0;"></h2>
+                <div class="blog-modal-meta" id="modalMeta"></div>
+            </div>
+            <div class="blog-modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Scroll to top -->
+    <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
     <script>
-        // Translations system
-        const translations = {
-            es: {
-                nav: {
-                    about: 'Sobre mí',
-                    experience: 'Experiencia',
-                    certifications: 'Certificaciones',
-                    projects: 'Proyectos',
-                    blog: 'Blog',
-                    contact: 'Contacto'
+    // ============================================================
+    // BLOG ARTICLES DATA
+    // ============================================================
+    const defaultArticles = [
+        {
+            id: 'etl-vs-elt-2024',
+            title: 'ETL vs ELT: ¿Cuál elegir en la era del cloud?',
+            category: 'ETL',
+            excerpt: 'Durante décadas, ETL fue el estándar indiscutible. Con BigQuery, Snowflake y dbt, ELT ha cambiado las reglas. Analizamos cuándo usar cada estrategia y cómo combinarlas.',
+            date: '10 Marzo 2026',
+            readTime: 7,
+            content: `<p>Durante más de veinte años trabajando en proyectos de integración de datos, he visto cómo el paradigma ha evolucionado radicalmente. El <strong>ETL (Extract, Transform, Load)</strong> fue durante décadas la arquitectura dominante, pero la irrupción del cloud ha dado paso al <strong>ELT (Extract, Load, Transform)</strong> como alternativa más ágil y escalable.</p>
+<h3>¿Qué es ETL?</h3>
+<p>En el modelo ETL, los datos se extraen de las fuentes, se transforman en una capa intermedia (el servidor ETL o motor dedicado) y después se cargan en el destino ya limpios y modelados. Herramientas clásicas: Informatica PowerCenter, Talend, DataStage.</p>
+<ul>
+<li><strong>Ventajas:</strong> Control total de transformaciones, menor coste de almacenamiento en destino, calidad garantizada antes de llegar al DWH.</li>
+<li><strong>Desventajas:</strong> Cuello de botella en el servidor ETL, mayor latencia, dificultad para escalar con grandes volúmenes.</li>
+</ul>
+<h3>¿Qué es ELT?</h3>
+<p>Con ELT, los datos se cargan primero en bruto al destino (BigQuery, Snowflake, Redshift) y las transformaciones se realizan directamente aprovechando la potencia de cómputo masivo de la plataforma cloud.</p>
+<ul>
+<li><strong>Ventajas:</strong> Escalabilidad casi ilimitada, transformaciones rápidas sobre grandes volúmenes, facilita la exploración de datos raw.</li>
+<li><strong>Desventajas:</strong> Coste de almacenamiento y cómputo cloud puede dispararse sin governance adecuado.</li>
+</ul>
+<h3>El rol de dbt en el ecosistema ELT</h3>
+<p>Una de las herramientas que más me ha sorprendido en los últimos años es <code>dbt</code> (data build tool). Permite definir transformaciones en SQL puro con versionado en git, tests automáticos y documentación generada automáticamente.</p>
+<pre><code>-- Modelo dbt: orders_summary
+SELECT
+    customer_id,
+    SUM(amount)      AS total_revenue,
+    COUNT(*)         AS num_orders,
+    MAX(order_date)  AS last_order_date
+FROM {{ ref('stg_orders') }}
+WHERE status = 'completed'
+GROUP BY 1</code></pre>
+<blockquote>Si manejas volúmenes moderados y necesitas control estricto de calidad, ETL con Informatica sigue siendo la opción más madura. Si trabajas con terabytes y necesitas agilidad, ELT con dbt + BigQuery es el futuro.</blockquote>
+<h3>Conclusión</h3>
+<p>No hay una respuesta única. En proyectos reales he aplicado ambas estrategias, incluso combinadas (híbrido). Lo clave es entender los trade-offs según tus volúmenes, latencia requerida, costes y capacidades del equipo.</p>`
+        },
+        {
+            id: 'dax-powerbi-top10',
+            title: '10 funciones DAX en Power BI que debes dominar',
+            category: 'BI',
+            excerpt: 'DAX puede parecer intimidante al principio, pero unas pocas funciones bien dominadas transforman completamente la calidad de tus modelos y dashboards en Power BI.',
+            date: '22 Febrero 2026',
+            readTime: 8,
+            content: `<p>Después de trabajar con Power BI en proyectos para aseguradoras y empresas multinacionales, puedo afirmar que el dominio de DAX es lo que separa un dashboard mediocre de uno verdaderamente útil para el negocio.</p>
+<h3>1. CALCULATE — La función más poderosa</h3>
+<p><code>CALCULATE</code> evalúa una expresión en un contexto de filtro modificado. Es la base de casi todo análisis avanzado.</p>
+<pre><code>Ventas_2025 = CALCULATE(SUM(Ventas[Importe]), YEAR(Ventas[Fecha]) = 2025)</code></pre>
+<h3>2. DATEADD — Comparativas temporales</h3>
+<pre><code>Ventas_Año_Anterior = CALCULATE(SUM(Ventas[Importe]), DATEADD(Calendario[Fecha], -1, YEAR))</code></pre>
+<h3>3. TOTALYTD — Acumulado anual</h3>
+<pre><code>Ventas_YTD = TOTALYTD(SUM(Ventas[Importe]), Calendario[Fecha])</code></pre>
+<h3>4. RANKX — Ranking dinámico</h3>
+<pre><code>Ranking_Producto = RANKX(ALL(Productos[Nombre]), [Total_Ventas])</code></pre>
+<h3>5. DIVIDE — División segura sin errores</h3>
+<pre><code>Margen = DIVIDE([Beneficio], [Ingresos], 0)</code></pre>
+<h3>6. SUMX — Suma iterativa</h3>
+<pre><code>Ingresos_Netos = SUMX(Ventas, Ventas[Cantidad] * Ventas[Precio] * (1 - Ventas[Descuento]))</code></pre>
+<h3>7. RELATED — Navegar relaciones</h3>
+<pre><code>Categoria = RELATED(Productos[Categoria])</code></pre>
+<h3>8. HASONEVALUE — Condicional de selección</h3>
+<pre><code>KPI_Titulo = IF(HASONEVALUE(Regiones[Nombre]), VALUES(Regiones[Nombre]), "Todas las Regiones")</code></pre>
+<h3>9. FILTER + ALL — Filtros independientes</h3>
+<pre><code>Top_Clientes = CALCULATE([Ventas], FILTER(ALL(Clientes), [Ventas] > 100000))</code></pre>
+<h3>10. USERELATIONSHIP — Relaciones inactivas</h3>
+<pre><code>Envios_por_FechaEntrega = CALCULATE(COUNT(Pedidos[ID]), USERELATIONSHIP(Pedidos[FechaEntrega], Calendario[Fecha]))</code></pre>
+<blockquote>El secreto del DAX avanzado está en entender la diferencia entre contexto de fila y contexto de filtro. Una vez que lo dominas, todo lo demás fluye.</blockquote>`
+        },
+        {
+            id: 'sql-window-functions',
+            title: 'SQL Window Functions: el arma secreta del Data Engineer',
+            category: 'SQL',
+            excerpt: 'Las funciones de ventana (OVER, PARTITION BY, RANK, LAG...) son posiblemente la feature SQL más infrautilizada. Con ellas eliminarás subconsultas complejas y multiplicarás el rendimiento.',
+            date: '8 Febrero 2026',
+            readTime: 6,
+            content: `<p>En 20 años optimizando queries en Oracle, SQL Server y BigQuery, he visto cómo las funciones de ventana (Window Functions) siguen siendo la herramienta más infrautilizada por analistas y desarrolladores. Aquí van las que más he usado en proyectos reales.</p>
+<h3>¿Qué es una Window Function?</h3>
+<p>A diferencia de GROUP BY que colapsa filas, las funciones de ventana calculan sobre un conjunto de filas relacionadas <em>sin eliminarlas del resultado</em>. La clave es la cláusula <code>OVER()</code>.</p>
+<h3>ROW_NUMBER — Numeración única</h3>
+<pre><code>SELECT
+    cliente_id,
+    pedido_id,
+    fecha,
+    ROW_NUMBER() OVER (PARTITION BY cliente_id ORDER BY fecha DESC) AS rn
+FROM pedidos</code></pre>
+<p>Ideal para quedarte con el último pedido por cliente: <code>WHERE rn = 1</code></p>
+<h3>RANK vs DENSE_RANK</h3>
+<pre><code>-- RANK: deja huecos (1,2,2,4)
+-- DENSE_RANK: sin huecos (1,2,2,3)
+RANK()       OVER (ORDER BY ventas DESC) AS rank_ventas,
+DENSE_RANK() OVER (ORDER BY ventas DESC) AS dense_rank_ventas</code></pre>
+<h3>LAG y LEAD — Comparar filas anteriores/siguientes</h3>
+<pre><code>SELECT
+    fecha,
+    ventas,
+    LAG(ventas, 1)  OVER (ORDER BY fecha) AS ventas_dia_anterior,
+    LEAD(ventas, 1) OVER (ORDER BY fecha) AS ventas_dia_siguiente,
+    ventas - LAG(ventas,1) OVER (ORDER BY fecha) AS variacion
+FROM ventas_diarias</code></pre>
+<h3>Acumulados con SUM OVER</h3>
+<pre><code>SELECT
+    fecha,
+    importe,
+    SUM(importe) OVER (PARTITION BY anio ORDER BY fecha ROWS UNBOUNDED PRECEDING) AS acumulado_anio
+FROM ventas</code></pre>
+<h3>Percentiles con NTILE</h3>
+<pre><code>-- Dividir clientes en 4 cuartiles según ventas
+NTILE(4) OVER (ORDER BY total_ventas DESC) AS cuartil</code></pre>
+<blockquote>Regla de oro: antes de escribir una subconsulta correlacionada para obtener el "anterior" o "siguiente" valor, piensa siempre en LAG/LEAD. El rendimiento mejora drásticamente, especialmente en Oracle Exadata y BigQuery.</blockquote>`
+        },
+        {
+            id: 'dbt-cloud-intro',
+            title: 'dbt Cloud: cómo modernizar tu Data Warehouse con SQL',
+            category: 'ETL',
+            excerpt: 'dbt (data build tool) ha cambiado la forma en que los equipos de datos construyen transformaciones. Aprende los conceptos clave: models, refs, tests y materializations.',
+            date: '28 Enero 2026',
+            readTime: 5,
+            content: `<p>Cuando empecé a trabajar con dbt hace unos años, lo que más me sorprendió fue lo familiar que resultaba: es SQL, pero con superpoderes. Si ya sabes SQL, aprender dbt es cuestión de horas.</p>
+<h3>¿Qué problema resuelve dbt?</h3>
+<p>En proyectos tradicionales, las transformaciones SQL estaban dispersas en scripts sin versionado, sin documentación y sin tests. dbt introduce el paradigma de <strong>software engineering aplicado a los datos</strong>:</p>
+<ul>
+<li>Versionado en Git de todas las transformaciones</li>
+<li>Tests automáticos (not null, unique, accepted values, relationships)</li>
+<li>Documentación auto-generada con linaje de datos</li>
+<li>Materializations configurables (view, table, incremental, ephemeral)</li>
+</ul>
+<h3>Estructura básica de un proyecto dbt</h3>
+<pre><code>my_project/
+├── models/
+│   ├── staging/          # Raw → Staging (rename, cast, clean)
+│   │   └── stg_orders.sql
+│   ├── intermediate/     # Transformaciones intermedias
+│   └── marts/            # Modelos finales para BI
+│       └── orders_summary.sql
+├── tests/
+├── macros/
+└── dbt_project.yml</code></pre>
+<h3>El poder de ref()</h3>
+<pre><code>-- orders_summary.sql
+SELECT
+    c.customer_name,
+    SUM(o.amount) AS total_revenue
+FROM {{ ref('stg_orders') }} o
+JOIN {{ ref('stg_customers') }} c ON o.customer_id = c.id
+GROUP BY 1</code></pre>
+<p><code>ref()</code> gestiona automáticamente las dependencias entre modelos y garantiza el orden correcto de ejecución.</p>
+<h3>Tests de calidad de datos</h3>
+<pre><code># schema.yml
+models:
+  - name: stg_orders
+    columns:
+      - name: order_id
+        tests: [unique, not_null]
+      - name: status
+        tests:
+          - accepted_values:
+              values: ['completed', 'pending', 'cancelled']</code></pre>
+<blockquote>Mi recomendación para equipos con ETL legacy en Informatica o Talend: no migréis todo de golpe. Empezad usando dbt para la capa de transformación sobre BigQuery o Snowflake, mientras mantenéis la ingesta con las herramientas existentes.</blockquote>`
+        },
+        {
+            id: 'kimball-vs-data-vault',
+            title: 'Kimball vs Data Vault 2.0: ¿qué modelo DWH elegir?',
+            category: 'Cloud',
+            excerpt: 'El modelado dimensional de Kimball ha sido el estándar durante 30 años. Data Vault 2.0 promete más agilidad ante cambios. Comparativa honesta basada en proyectos reales.',
+            date: '15 Enero 2026',
+            readTime: 9,
+            content: `<p>Una de las decisiones más importantes en cualquier proyecto de Data Warehouse es la metodología de modelado. Después de implementar ambas en proyectos reales, comparto mis conclusiones.</p>
+<h3>Kimball: Modelado Dimensional</h3>
+<p>El enfoque de Ralph Kimball se basa en <strong>esquemas estrella</strong>: una tabla de hechos central rodeada de dimensiones desnormalizadas. Es el estándar desde los años 90 y sigue siendo muy válido.</p>
+<ul>
+<li><strong>Ventajas:</strong> Muy fácil para usuarios de negocio, excelente rendimiento en queries analíticas, compatible con Power BI/Tableau de forma natural.</li>
+<li><strong>Desventajas:</strong> Difícil de evolucionar cuando cambian los requisitos, auditoría de cambios históricos compleja.</li>
+</ul>
+<pre><code>-- Esquema estrella típico
+FACT_VENTAS (fecha_id, producto_id, cliente_id, region_id, importe, cantidad)
+DIM_FECHA (fecha_id, dia, mes, trimestre, año, es_laborable)
+DIM_PRODUCTO (producto_id, nombre, categoria, subcategoria, precio_lista)
+DIM_CLIENTE (cliente_id, nombre, segmento, pais, ciudad)</code></pre>
+<h3>Data Vault 2.0</h3>
+<p>Desarrollado por Dan Linstedt, Data Vault separa la estructura en tres tipos de entidades: <strong>Hubs</strong> (entidades de negocio), <strong>Links</strong> (relaciones) y <strong>Satellites</strong> (atributos y contexto).</p>
+<ul>
+<li><strong>Ventajas:</strong> Altamente flexible ante cambios, auditoría histórica nativa, ideal para múltiples fuentes con carga paralela.</li>
+<li><strong>Desventajas:</strong> Mayor complejidad, más tablas, queries más complejas, curva de aprendizaje alta.</li>
+</ul>
+<pre><code>-- Data Vault: Hub de Clientes
+HUB_CLIENTE (cliente_hk, cliente_bk, load_date, record_source)
+-- Satellite con atributos (historial completo)
+SAT_CLIENTE (cliente_hk, load_date, load_end_date, nombre, segmento, hash_diff)</code></pre>
+<h3>¿Cuándo usar cada uno?</h3>
+<ul>
+<li><strong>Kimball:</strong> Proyectos con requisitos bien definidos, equipos pequeños, usuarios de negocio directos en el DWH.</li>
+<li><strong>Data Vault:</strong> Entornos empresariales complejos, múltiples sistemas fuente, requisitos de auditoría estrictos, DWH corporativo de larga vida.</li>
+</ul>
+<blockquote>En mi experiencia, Kimball sigue siendo la mejor opción para el 80% de los proyectos. Data Vault brilla cuando tienes 10+ sistemas fuente y los requisitos cambian constantemente. En ambos casos, dbt facilita enormemente la implementación.</blockquote>`
+        },
+        {
+            id: 'informatica-vs-talend',
+            title: 'Informatica PowerCenter vs Talend: comparativa honesta 2026',
+            category: 'Tools',
+            excerpt: 'Dos décadas usando Informatica y Talend en proyectos reales me dan una perspectiva única. Rendimiento, coste, curva de aprendizaje, migración a cloud: todo comparado sin filtros.',
+            date: '5 Enero 2026',
+            readTime: 7,
+            content: `<p>He trabajado con Informatica PowerCenter desde 2005 y con Talend desde 2012. Esta comparativa no es un análisis de producto: es la destilación de experiencia real en proyectos en Accenture, IBM, Soprasteria y Línea Directa.</p>
+<h3>Informatica PowerCenter</h3>
+<p>El estándar de facto en grandes empresas. Potente, estable, con la mejor capacidad de manejo de volúmenes masivos y conectores enterprise.</p>
+<ul>
+<li><strong>Fortalezas:</strong> Rendimiento excepcional, metadata management, IICS para cloud, soporte enterprise 24/7, excelente para Oracle/SAP.</li>
+<li><strong>Debilidades:</strong> Licencias muy costosas, curva de aprendizaje alta, migraciones complejas entre versiones.</li>
+<li><strong>Ideal para:</strong> Banca, seguros, telco — empresas con millones de registros diarios.</li>
+</ul>
+<h3>Talend</h3>
+<p>Open source en su versión community, muy popular en empresas medianas y equipos ágiles. Su generación de código Java lo hace transparente y debuggable.</p>
+<ul>
+<li><strong>Fortalezas:</strong> Curva de aprendizaje más suave, versión open source, integración nativa con ecosistema Hadoop/Spark, generación de código legible.</li>
+<li><strong>Debilidades:</strong> El código Java generado puede ser lento sin optimización, la versión enterprise es cara, soporte menos robusto que Informatica.</li>
+<li><strong>Ideal para:</strong> Empresas medianas, proyectos de agilidad, equipos que valoran el open source.</li>
+</ul>
+<h3>Migración a cloud: IICS vs Talend Cloud</h3>
+<p>Ambas herramientas tienen su versión cloud. Mi experiencia con <strong>Informatica IICS</strong> es muy positiva para entornos enterprise. <strong>Talend Cloud</strong> es más asequible pero con menos madurez en conectores legacy.</p>
+<pre><code>-- Criterios de elección resumidos
+Volumen > 100M registros/día   → Informatica
+Presupuesto limitado           → Talend Open Source + dbt
+Ecosistema cloud nativo        → dbt + Airflow + cloud-native
+Sistemas legacy (SAP, Oracle)  → Informatica IICS</code></pre>
+<blockquote>Mi recomendación en 2026: para nuevos proyectos cloud-first, considera dbt + Airflow antes de Informatica o Talend. Pero si ya tienes Informatica en producción con cientos de mappings, la migración tiene que justificarse muy bien por ROI.</blockquote>`
+        }
+    ];
+
+    function getArticles() {
+        const stored = localStorage.getItem('blog_articles');
+        const custom = stored ? JSON.parse(stored) : [];
+        return [...defaultArticles, ...custom];
+    }
+
+    function saveArticle() {
+        const title = document.getElementById('artTitle').value.trim();
+        const excerpt = document.getElementById('artExcerpt').value.trim();
+        const content = document.getElementById('artContent').value.trim();
+        const category = document.getElementById('artCategory').value;
+        const readTime = parseInt(document.getElementById('artReadTime').value) || 5;
+        const date = document.getElementById('artDate').value.trim() || new Date().toLocaleDateString('es-ES', {day:'numeric',month:'long',year:'numeric'});
+        if (!title || !excerpt || !content) { alert('Por favor completa los campos obligatorios (*)'); return; }
+        const stored = localStorage.getItem('blog_articles');
+        const articles = stored ? JSON.parse(stored) : [];
+        articles.unshift({ id: 'custom-' + Date.now(), title, category, excerpt, date, readTime, content });
+        localStorage.setItem('blog_articles', JSON.stringify(articles));
+        document.getElementById('adminPanel').classList.remove('open');
+        document.getElementById('artTitle').value = '';
+        document.getElementById('artExcerpt').value = '';
+        document.getElementById('artContent').value = '';
+        renderBlog(document.querySelector('.filter-btn.active')?.dataset.filter || 'all');
+    }
+
+    function renderBlog(filter) {
+        const articles = getArticles().filter(a => filter === 'all' || a.category === filter);
+        const grid = document.getElementById('blogGrid');
+        if (!articles.length) { grid.innerHTML = '<p style="color:var(--text-muted);grid-column:1/-1">No hay artículos en esta categoría todavía.</p>'; return; }
+        const catEmoji = { ETL:'🔄', BI:'📊', SQL:'⚡', Cloud:'☁️', Tools:'🔧' };
+        grid.innerHTML = articles.map(a => `
+            <div class="blog-card fade-in-up" onclick="openBlogModal('${a.id}')">
+                <div class="blog-card-header">
+                    <div class="blog-cat-pill">${catEmoji[a.category]||'📝'} ${a.category}</div>
+                    <div class="blog-card-title">${a.title}</div>
+                </div>
+                <div class="blog-card-body">
+                    <p class="blog-card-excerpt">${a.excerpt}</p>
+                </div>
+                <div class="blog-card-footer">
+                    <div class="blog-card-meta">
+                        <span>📅 ${a.date}</span>
+                        <span>⏱ ${a.readTime} min</span>
+                    </div>
+                    <span class="blog-read-more">Leer más <span>→</span></span>
+                </div>
+            </div>
+        `).join('');
+        setTimeout(() => {
+            grid.querySelectorAll('.fade-in-up').forEach(el => el.classList.add('visible'));
+        }, 50);
+    }
+
+    function openBlogModal(id) {
+        const article = getArticles().find(a => a.id === id);
+        if (!article) return;
+        const catEmoji = { ETL:'🔄', BI:'📊', SQL:'⚡', Cloud:'☁️', Tools:'🔧' };
+        document.getElementById('modalCategory').innerHTML = `${catEmoji[article.category]||'📝'} ${article.category}`;
+        document.getElementById('modalTitle').textContent = article.title;
+        document.getElementById('modalMeta').innerHTML = `<span>📅 ${article.date}</span><span>⏱ ${article.readTime} min de lectura</span>`;
+        document.getElementById('modalBody').innerHTML = article.content;
+        document.getElementById('blogModal').classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeBlogModal() {
+        document.getElementById('blogModal').classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    function closeBlogModalOutside(e) {
+        if (e.target === document.getElementById('blogModal')) closeBlogModal();
+    }
+
+    // ============================================================
+    // TRANSLATIONS
+    // ============================================================
+    const translations = {
+        es: {
+            nav: { about:'Sobre mí', experience:'Experiencia', certifications:'Certificaciones', projects:'Proyectos', services:'Servicios', blog:'Blog', contact:'Contacto' },
+            contact: { sending:'Enviando...', success:'✓ ¡Mensaje enviado! Me pondré en contacto pronto.', error:'✗ Error al enviar. Intenta de nuevo o contacta por email.' },
+            footer: { copyright:'© 2026 Antonio MORO DIAZ — Experto BI & Integración de Datos' }
+        },
+        fr: {
+            nav: { about:'À Propos', experience:'Expérience', certifications:'Certifications', projects:'Projets', services:'Services', blog:'Blog', contact:'Contact' },
+            contact: { sending:'Envoi...', success:'✓ Message envoyé! Je vous contacterai bientôt.', error:'✗ Erreur. Réessayez ou contactez-moi par email.' },
+            footer: { copyright:'© 2026 Antonio MORO DIAZ — Expert BI & Intégration de Données' }
+        },
+        en: {
+            nav: { about:'About', experience:'Experience', certifications:'Certifications', projects:'Projects', services:'Services', blog:'Blog', contact:'Contact' },
+            contact: { sending:'Sending...', success:'✓ Message sent! I will contact you soon.', error:'✗ Error sending. Try again or contact me by email.' },
+            footer: { copyright:'© 2026 Antonio MORO DIAZ — BI & Data Integration Expert' }
+        }
+    };
+
+    // ============================================================
+    // I18N
+    // ============================================================
+    class I18n {
+        constructor() {
+            this.currentLang = localStorage.getItem('lang') || 'es';
+            this.init();
+        }
+        init() {
+            this.renderNav();
+            this.attachLanguageListeners();
+            this.attachThemeListener();
+            this.loadThemePreference();
+            this.setLanguage(this.currentLang);
+        }
+        setLanguage(lang) {
+            this.currentLang = lang;
+            localStorage.setItem('lang', lang);
+            document.documentElement.lang = lang;
+            this.renderNav();
+            this.updateButtons();
+            if (document.getElementById('footerCopy')) {
+                document.getElementById('footerCopy').textContent = translations[lang].footer.copyright;
+            }
+        }
+        renderNav() {
+            const t = translations[this.currentLang];
+            const navMenu = document.getElementById('navMenu');
+            if (!navMenu) return;
+            navMenu.innerHTML = `
+                <li><a href="#about">${t.nav.about}</a></li>
+                <li><a href="#experience">${t.nav.experience}</a></li>
+                <li><a href="#certifications">${t.nav.certifications}</a></li>
+                <li><a href="#projects">${t.nav.projects}</a></li>
+                <li><a href="#services">${t.nav.services}</a></li>
+                <li><a href="#blog">${t.nav.blog}</a></li>
+                <li><a href="#contact">${t.nav.contact}</a></li>
+            `;
+        }
+        updateButtons() {
+            const langFlags = { es:'🇪🇸', fr:'🇫🇷', en:'🇬🇧' };
+            const btn = document.querySelector('.lang-dropdown-btn');
+            if (btn) btn.innerHTML = `<span class="flag">${langFlags[this.currentLang]}</span><span class="dropdown-arrow">▼</span>`;
+            document.querySelectorAll('.lang-option').forEach(opt => {
+                opt.classList.toggle('active', opt.getAttribute('data-lang') === this.currentLang);
+            });
+        }
+        attachLanguageListeners() {
+            const btn = document.getElementById('langDropdownBtn');
+            const menu = document.getElementById('langDropdownMenu');
+            const sel = document.querySelector('.language-selector');
+            if (!btn || !menu || !sel) return;
+            btn.addEventListener('click', e => { e.preventDefault(); sel.classList.toggle('open'); });
+            menu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', e => {
+                    e.preventDefault();
+                    this.setLanguage(link.getAttribute('data-lang'));
+                    sel.classList.remove('open');
+                });
+            });
+            document.addEventListener('click', e => { if (!sel.contains(e.target)) sel.classList.remove('open'); });
+        }
+        attachThemeListener() {
+            document.getElementById('themeToggle')?.addEventListener('click', () => this.toggleTheme());
+        }
+        toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            this.updateThemeIcon();
+        }
+        loadThemePreference() {
+            if (localStorage.getItem('theme') === 'dark') document.body.classList.add('dark-mode');
+            this.updateThemeIcon();
+        }
+        updateThemeIcon() {
+            const isDark = document.body.classList.contains('dark-mode');
+            const icon = document.querySelector('.theme-icon');
+            if (icon) icon.textContent = isDark ? '☀️' : '🌙';
+        }
+    }
+
+    // ============================================================
+    // INTERACTIONS & ANIMATIONS
+    // ============================================================
+
+    // Smooth scroll
+    document.addEventListener('click', e => {
+        const anchor = e.target.closest('a[href^="#"]');
+        if (!anchor) return;
+        const href = anchor.getAttribute('href');
+        if (href === '#') return;
+        e.preventDefault();
+        const el = document.querySelector(href);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Escape key closes modal
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeBlogModal(); });
+
+    // Scroll to top visibility
+    window.addEventListener('scroll', () => {
+        const btn = document.getElementById('scrollTop');
+        if (btn) btn.classList.toggle('visible', window.scrollY > 400);
+    });
+
+    // Intersection observer for fade-in and skill bars
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            const el = entry.target;
+            el.classList.add('visible');
+            // Animate skill bars inside this element
+            el.querySelectorAll('.skill-bar-fill[data-width]').forEach(bar => {
+                bar.style.width = bar.dataset.width + '%';
+            });
+            observer.unobserve(el);
+        });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+    // Also observe skill bars section directly
+    const aboutObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            entry.target.querySelectorAll('.skill-bar-fill[data-width]').forEach(bar => {
+                bar.style.width = bar.dataset.width + '%';
+            });
+            aboutObserver.unobserve(entry.target);
+        });
+    }, { threshold: 0.2 });
+
+    // Form submission
+    document.getElementById('contactForm')?.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const btn = document.querySelector('.submit-btn');
+        const orig = btn.textContent;
+        const t = translations[localStorage.getItem('lang') || 'es'];
+        btn.textContent = t.contact.sending;
+        btn.disabled = true;
+        fetch('https://formspree.io/f/xvgoydlg', {
+            method: 'POST', body: new FormData(this), headers: { Accept: 'application/json' }
+        }).then(r => {
+            const msg = document.getElementById('formMessage');
+            if (r.ok) {
+                msg.textContent = t.contact.success;
+                msg.className = 'form-message success';
+                this.reset();
+                setTimeout(() => msg.className = 'form-message', 5000);
+            } else throw new Error();
+        }).catch(() => {
+            const msg = document.getElementById('formMessage');
+            msg.textContent = t.contact.error;
+            msg.className = 'form-message error';
+        }).finally(() => { btn.textContent = orig; btn.disabled = false; });
+    });
+
+    // Admin panel toggle
+    document.getElementById('adminToggle')?.addEventListener('click', () => {
+        document.getElementById('adminPanel').classList.toggle('open');
+    });
+
+    // Blog filter buttons
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            renderBlog(btn.dataset.filter);
+        });
+    });
+
+    // Init
+    document.addEventListener('DOMContentLoaded', () => {
+        new I18n();
+        renderBlog('all');
+
+        // Observe fade-in elements
+        document.querySelectorAll('.fade-in-up, .cert-card, .project-card, .service-card, .timeline-item').forEach(el => {
+            el.classList.add('fade-in-up');
+            observer.observe(el);
+        });
+
+        // Observe about section for skill bars
+        const aboutSection = document.getElementById('about');
+        if (aboutSection) aboutObserver.observe(aboutSection);
+    });
+    </script>
+</body>
+</html>
                 },
                 hero: {
                     name: 'Antonio MORO DIAZ',
@@ -1902,188 +2821,3 @@
                     <li><a href="#contact">${t.nav.contact}</a></li>
                 `;
             }
-
-            updateButtons() {
-                const langFlags = { es: '🇪🇸', fr: '🇫🇷', en: '🇬🇧' };
-                
-                // Actualizar botón principal - solo bandera
-                const btn = document.querySelector('.lang-dropdown-btn');
-                btn.innerHTML = `
-                    <span class="flag">${langFlags[this.currentLang]}</span>
-                    <span class="dropdown-arrow">▼</span>
-                `;
-
-                // Actualizar opciones del menú - marcar como activa
-                document.querySelectorAll('.lang-option').forEach(option => {
-                    option.classList.remove('active');
-                    if (option.getAttribute('data-lang') === this.currentLang) {
-                        option.classList.add('active');
-                    }
-                });
-            }
-
-            attachLanguageListeners() {
-                const dropdownBtn = document.getElementById('langDropdownBtn');
-                const dropdownMenu = document.getElementById('langDropdownMenu');
-                const selector = document.querySelector('.language-selector');
-                
-                // Toggle dropdown
-                dropdownBtn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    selector.classList.toggle('open');
-                });
-
-                // Close dropdown when item selected
-                dropdownMenu.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        const lang = link.getAttribute('data-lang');
-                        this.setLanguage(lang);
-                        selector.classList.remove('open');
-                    });
-                });
-
-                // Close dropdown when clicking outside
-                document.addEventListener('click', (e) => {
-                    if (!selector.contains(e.target)) {
-                        selector.classList.remove('open');
-                    }
-                });
-            }
-
-            attachThemeListener() {
-                document.getElementById('themeToggle').addEventListener('click', () => this.toggleTheme());
-            }
-
-            toggleTheme() {
-                document.body.classList.toggle('dark-mode');
-                const isDark = document.body.classList.contains('dark-mode');
-                localStorage.setItem('theme', isDark ? 'dark' : 'light');
-                this.updateThemeIcon();
-            }
-
-            loadThemePreference() {
-                const savedTheme = localStorage.getItem('theme') || 'light';
-                if (savedTheme === 'dark') {
-                    document.body.classList.add('dark-mode');
-                }
-                this.updateThemeIcon();
-            }
-
-            updateThemeIcon() {
-                const isDark = document.body.classList.contains('dark-mode');
-                document.querySelector('.theme-icon').textContent = isDark ? '☀️' : '🌙';
-            }
-        }
-
-        // Initialize i18n when DOM is ready
-        document.addEventListener('DOMContentLoaded', () => {
-            const i18n = new I18n();
-        });
-    </script>
-
-    <script>
-        // Google Analytics (Reemplaza G-XXXXXXXXXX con tu ID de GA)
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true });
-    </script>
-
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const href = this.getAttribute('href');
-                if (href !== '#contact') {
-                    e.preventDefault();
-                    const element = document.querySelector(href);
-                    if (element) {
-                        element.scrollIntoView({ behavior: 'smooth' });
-                    }
-                }
-            });
-        });
-
-        // Form submission with Formspree
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const submitBtn = document.querySelector('.submit-btn');
-            const originalText = submitBtn.textContent;
-            const t = translations[localStorage.getItem('lang') || 'es'];
-            submitBtn.textContent = t.contact.sending;
-            submitBtn.disabled = true;
-
-            const formData = new FormData(this);
-            fetch('https://formspree.io/f/xvgoydlg', {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            })
-            .then(response => {
-                if (response.ok) {
-                    const formMessage = document.getElementById('formMessage');
-                    formMessage.textContent = t.contact.success;
-                    formMessage.classList.add('success');
-                    formMessage.classList.remove('error');
-                    document.getElementById('contactForm').reset();
-                    
-                    if (window.gtag) {
-                        gtag('event', 'form_submission', {
-                            'form_name': 'contact_form'
-                        });
-                    }
-                    
-                    setTimeout(() => {
-                        formMessage.classList.remove('success');
-                    }, 5000);
-                } else {
-                    throw new Error('Error en el formulario');
-                }
-            })
-            .catch(error => {
-                const formMessage = document.getElementById('formMessage');
-                formMessage.textContent = t.contact.error;
-                formMessage.classList.add('error');
-                formMessage.classList.remove('success');
-            })
-            .finally(() => {
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            });
-        });
-
-        // Add scroll animation for elements
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.cert-card, .project-card').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            observer.observe(el);
-        });
-
-        // Track page views
-        if (window.gtag) {
-            gtag('event', 'page_view', {
-                'page_title': document.title,
-                'page_location': window.location.href
-            });
-        }
-    </script>
-</body>
-</html>
