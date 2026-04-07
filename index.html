@@ -2119,18 +2119,42 @@ Sistemas legacy (SAP, Oracle)  → Informatica IICS</code></pre>
     const translations = {
         es: {
             nav: { about:'Sobre mí', experience:'Experiencia', certifications:'Certificaciones', projects:'Proyectos', services:'Servicios', blog:'Blog', contact:'Contacto' },
-            contact: { sending:'Enviando...', success:'✓ ¡Mensaje enviado! Me pondré en contacto pronto.', error:'✗ Error al enviar. Intenta de nuevo o contacta por email.' },
-            footer: { copyright:'© 2026 Antonio MORO DIAZ — Experto BI & Integración de Datos' }
+            hero: { name:'Antonio MORO DIAZ', title:'Experto BI & Integración de Datos | Data Engineer', description:'Especialista en diseño y optimización de procesos ETL, BI y soluciones cloud. Más de 20 años de experiencia en Data Analytics y liderazgo de equipos internacionales.', cta1:'Contactarme', cta2:'Mi LinkedIn' },
+            about: { title:'Sobre mí', subtitle:'Experto en BI & Integración de Datos', desc1:'Con más de 20 años de experiencia en el diseño, desarrollo y optimización de soluciones BI y procesos ETL complejos. Especializado en transformar datos en insights accionables y liderar equipos multidisciplinares en entornos internacionales.', desc2:'Tengo un sólido dominio en herramientas ETL (Informatica, Talend, dbt), BI (Power BI, Tableau) y tecnologías cloud (Azure, GCP). Mi objetivo es automatizar procesos, optimizar consultas SQL y crear soluciones escalables que impulsen la toma de decisiones estratégica en las organizaciones.', languages:'Idiomas: Español (Nativo), Inglés (Intermedio), Francés (C2)', location:'Ubicación: Madrid, España', techStack:'Stack Tecnológico', databases:'Bases de Datos', databasesDesc:'Oracle Exadata, SQL Server, MySQL, DB2, Google BigQuery', etl:'ETL/ELT', etlDesc:'Informatica PowerCenter, IICS, Talend, DataStage, ODI, dbt cloud', bi:'BI & Visualización', biDesc:'Power BI, Tableau, Google Data Studio, IBM Cognos Analytics, QlikView', cloud:'Cloud Platforms', cloudDesc:'Azure DataOps, Google Cloud Platform (GCP), API Integrations', languages2:'Lenguajes', languagesDesc:'SQL (Optimización), Python (Pandas, NumPy), Bash Scripting, Java, XML', others:'Otros', othersDesc:'Modelado DWH, Control-M, Salesforce, D3.js, MDX, DAX, Erwin' },
+            experience: { title:'Experiencia Profesional', exp1:'Experto BI & Integración de Datos', exp1Company:'Soprasteria', exp1Date:'Marzo 2018 - Actualidad', exp1Desc:'✔️ Desarrollo y mantenimiento evolutivo de proyectos Data en entorno internacional.<br>✔️ Implementación y optimización de procesos ETL para ingesta de datos.<br>✔️ Migración y mejora de herramientas ETL y sistemas de gestión de datos.<br>✔️ Coordinación de equipo y seguimiento semanal con equipos del cliente.', exp2:'Experto BI', exp2Company:'Línea Directa Aseguradora', exp2Date:'Marzo 2018 - Enero 2022', exp2Desc:'✔️ Liderazgo en gestión de proyectos y coordinación de equipos técnicos.<br>✔️ Interlocución con usuarios para toma de requerimientos y formación.<br>✔️ Diseño y modelado de datos para creación de informes y dashboards.', exp3:'Team Leader BI', exp3Company:'Accenture', exp3Date:'Febrero 2015 - Febrero 2018', exp3Desc:'✔️ Planificación y gestión de proyectos BI.<br>✔️ Diseño y desarrollo de modelos DWH y procesos ETL.<br>✔️ Supervisión de equipos técnicos y seguimiento con usuarios.', exp4:'Team Leader BI', exp4Company:'Soprasteria', exp4Date:'Marzo 2013 - Enero 2015', exp4Desc:'✔️ Dirección y priorización de tareas en proyectos de Data Analytics.<br>✔️ Liderazgo de equipos multidisciplinares de 10 personas.<br>✔️ Validación de soluciones técnicas y desarrollo de aplicaciones.', exp5:'Consultor BI', exp5Company:'IBM', exp5Date:'Octubre 2010 - Marzo 2013', exp5Desc:'✔️ Integración de datos mediante ETL y desarrollo de estructuras multidimensionales.<br>✔️ Diseño de informes y dashboards personalizados según necesidades del negocio.<br>✔️ Identificación y desarrollo de visualizaciones clave para usuarios.', exp6:'Consultor BI', exp6Company:'Consultoría', exp6Date:'Septiembre 2001 - Septiembre 2010', exp6Desc:'✔️ Desarrollo de soluciones BI para toma de decisiones estratégicas.<br>✔️ Análisis de datos masivos y creación de dashboards para múltiples clientes.<br>✔️ Optimización de procesos de extracción y transformación de datos.' },
+            education: { title:'Educación', degree:'Ingeniero Superior', university:'Universidad de Córdoba', year:'2001', description:'Formación sólida en programación, bases de datos, sistemas distribuidos y arquitectura de software.' },
+            certifications: { title:'Competencias Clave', cert1:'ETL & Integración de Datos', cert1Desc:'Diseño de flujos de datos complejos, optimización de procesos y arquitectura de soluciones.', cert2:'Business Intelligence', cert2Desc:'Creación de dashboards interactivos, modelado dimensional y análisis avanzados.', cert3:'Cloud Data Solutions', cert3Desc:'Implementación en Azure y GCP, data warehousing en la nube y APIs.', cert4:'Liderazgo & Gestión', cert4Desc:'Dirección de equipos, gestión de proyectos complejos y comunicación estratégica.', cert5:'Optimización SQL', cert5Desc:'Análisis de rendimiento, indexación avanzada y arquitectura de bases de datos.', cert6:'Modernización de Datos', cert6Desc:'Migración de sistemas legacy, adopción de dbt y metodologías modernas.' },
+            projects: { title:'Proyectos Destacados', proj1:'Plataforma Integral de BI', proj1Desc:'Diseño y desarrollo de una solución BI escalable para una aseguradora multinacional, integrando datos de múltiples sistemas y creando dashboards ejecutivos con Power BI.', proj2:'Migración ETL a Cloud', proj2Desc:'Liderazgo en la migración de 50+ procesos ETL desde Informatica on-premises a Azure DataOps, mejorando tiempo de ejecución en 40%.', proj3:'Data Warehouse Moderno', proj3Desc:'Implementación de DWH con dbt en Google BigQuery para multinacional con 2TB+ de datos diarios.', proj4:'Dashboard Ejecutivo Time-to-Market', proj4Desc:'Creación de dashboard de inteligencia de negocio en 6 semanas utilizando Power BI y modelos semánticos avanzados.', proj5:'Automatización de Reportes', proj5Desc:'Sistema de reportería automatizado con Talend y Tableau reduciendo tiempo manual en 80%.', proj6:'Optimización de Consultas SQL', proj6Desc:'Análisis y optimización de queries en Oracle Exadata, mejorando rendimiento en 60% sin cambios de arquitectura.' },
+            contact: { title:'Contacto', description:'Siéntete libre de contactarme para discutir tus proyectos de datos, oportunidades laborales o consultoría.', name:'Nombre', email:'Email', message:'Mensaje', send:'Enviar Mensaje', sending:'Enviando...', success:'✓ ¡Mensaje enviado correctamente! Me pondré en contacto pronto.', error:'✗ Error al enviar. Intenta de nuevo o contacta por email.', labelName:'Nombre', labelEmail:'Email', labelMessage:'Mensaje', phone:'Teléfono' },
+            footer: { copyright:'© 2026 Antonio MORO DIAZ - Experto BI & Integración de Datos', subtitle:'Madrid, España · Disponible para proyectos remotos' },
+            services: { title:'Servicios de Consultoría', intro:'¿Necesitas transformar tus datos en ventajas competitivas? Ofrezco consultoría especializada: desde la arquitectura hasta la visualización final.', cta:'Solicitar consulta', srv1:'Auditoría & Optimización ETL', srv1Desc:'Análisis completo de tus procesos ETL actuales, identificación de cuellos de botella y propuesta de mejoras con ROI medible.', srv2:'Desarrollo BI & Dashboards', srv2Desc:'Diseño y desarrollo de dashboards ejecutivos con Power BI o Tableau que convierten datos en decisiones de negocio claras y accionables.', srv3:'Arquitectura de Datos', srv3Desc:'Diseño de arquitecturas modernas (DWH, Data Lake, Lakehouse) adaptadas a tus volúmenes, presupuesto y equipo.', srv4:'Migración a Cloud', srv4Desc:'Planificación y ejecución de migraciones on-premise a cloud con mínimo riesgo, máxima continuidad y validación rigurosa.', srv5:'Optimización SQL', srv5Desc:'Diagnóstico y optimización de consultas SQL críticas en Oracle, SQL Server o BigQuery. Mejoras medibles en días, no meses.', srv6:'Formación & Mentoring', srv6Desc:'Formación práctica y mentoring para equipos de datos en ETL, SQL avanzado, Power BI, dbt y buenas prácticas en Data Engineering.' },
+            blog: { title:'Blog Técnico', intro:'Artículos sobre ETL, BI, SQL avanzado, arquitectura cloud y buenas prácticas en Data Engineering — fruto de 20+ años de experiencia real.', filterAll:'Todos', filterETL:'ETL & Integración', filterBI:'BI & Visualización', filterSQL:'SQL & BD', filterCloud:'Cloud & Arq.', filterTools:'Herramientas' }
         },
         fr: {
             nav: { about:'À Propos', experience:'Expérience', certifications:'Certifications', projects:'Projets', services:'Services', blog:'Blog', contact:'Contact' },
-            contact: { sending:'Envoi...', success:'✓ Message envoyé! Je vous contacterai bientôt.', error:'✗ Erreur. Réessayez ou contactez-moi par email.' },
-            footer: { copyright:'© 2026 Antonio MORO DIAZ — Expert BI & Intégration de Données' }
+            hero: { name:'Antonio MORO DIAZ', title:'Expert BI & Intégration de Données | Data Engineer', description:'Spécialiste de la conception et de l\'optimisation des processus ETL, BI et solutions cloud. Plus de 20 ans d\'expérience en Data Analytics et leadership d\'équipes internationales.', cta1:'Me Contacter', cta2:'Mon LinkedIn' },
+            about: { title:'À Propos', subtitle:'Expert en BI & Intégration de Données', desc1:'Fort de plus de 20 ans d\'expérience dans la conception, le développement et l\'optimisation de solutions BI et de processus ETL complexes. Spécialisé dans la transformation des données en insights actionnables et le leadership d\'équipes multidisciplinaires dans des environnements internationaux.', desc2:'Je maîtrise les outils ETL (Informatica, Talend, dbt), BI (Power BI, Tableau) et technologies cloud (Azure, GCP). Mon objectif est d\'automatiser les processus, d\'optimiser les requêtes SQL et de créer des solutions évolutives qui favorisent la prise de décision stratégique dans les organisations.', languages:'Langues: Espagnol (Natif), Anglais (Intermédiaire), Français (C2)', location:'Localisation: Madrid, Espagne', techStack:'Stack Technologique', databases:'Bases de Données', databasesDesc:'Oracle Exadata, SQL Server, MySQL, DB2, Google BigQuery', etl:'ETL/ELT', etlDesc:'Informatica PowerCenter, IICS, Talend, DataStage, ODI, dbt cloud', bi:'BI & Visualisation', biDesc:'Power BI, Tableau, Google Data Studio, IBM Cognos Analytics, QlikView', cloud:'Plates-formes Cloud', cloudDesc:'Azure DataOps, Google Cloud Platform (GCP), Intégrations API', languages2:'Langages', languagesDesc:'SQL (Optimisation), Python (Pandas, NumPy), Bash Scripting, Java, XML', others:'Autres', othersDesc:'Modélisation DWH, Control-M, Salesforce, D3.js, MDX, DAX, Erwin' },
+            experience: { title:'Expérience Professionnelle', exp1:'Expert BI & Intégration de Données', exp1Company:'Soprasteria', exp1Date:'Mars 2018 - Aujourd\'hui', exp1Desc:'✔️ Développement et maintien évolutif de projets Data en environnement international.<br>✔️ Implémentation et optimisation des processus ETL pour l\'ingestion de données.<br>✔️ Migration et amélioration des outils ETL et systèmes de gestion de données.<br>✔️ Coordination d\'équipe et suivi hebdomadaire avec les équipes clients.', exp2:'Expert BI', exp2Company:'Línea Directa Aseguradora', exp2Date:'Mars 2018 - Janvier 2022', exp2Desc:'✔️ Leadership en gestion de projets et coordination des équipes techniques.<br>✔️ Interaction avec les utilisateurs pour la collecte des exigences et la formation.<br>✔️ Conception et modélisation des données pour la création de rapports et tableaux de bord.', exp3:'Team Leader BI', exp3Company:'Accenture', exp3Date:'Février 2015 - Février 2018', exp3Desc:'✔️ Planification et gestion des projets BI.<br>✔️ Conception et développement de modèles DWH et processus ETL.<br>✔️ Supervision des équipes techniques et suivi avec les utilisateurs.', exp4:'Team Leader BI', exp4Company:'Soprasteria', exp4Date:'Mars 2013 - Janvier 2015', exp4Desc:'✔️ Direction et priorisation des tâches dans les projets Data Analytics.<br>✔️ Leadership d\'équipes multidisciplinaires de 10 personnes.<br>✔️ Validation des solutions techniques et développement d\'applications.', exp5:'Consultant BI', exp5Company:'IBM', exp5Date:'Octobre 2010 - Mars 2013', exp5Desc:'✔️ Intégration des données via ETL et développement de structures multidimensionnelles.<br>✔️ Conception de rapports et tableaux de bord personnalisés selon les besoins du métier.<br>✔️ Identification et développement de visualisations clés pour les utilisateurs.', exp6:'Consultant BI', exp6Company:'Cabinet de Conseil', exp6Date:'Septembre 2001 - Septembre 2010', exp6Desc:'✔️ Développement de solutions BI pour la prise de décision stratégique.<br>✔️ Analyse de données volumineuses et création de tableaux de bord pour plusieurs clients.<br>✔️ Optimisation des processus d\'extraction et transformation des données.' },
+            education: { title:'Éducation', degree:'Ingénieur Supérieur', university:'Université de Córdoba', year:'2001', description:'Formation solide en programmation, bases de données, systèmes distribués et architecture logicielle.' },
+            certifications: { title:'Compétences Clés', cert1:'ETL & Intégration de Données', cert1Desc:'Conception de flux de données complexes, optimisation des processus et architecture des solutions.', cert2:'Business Intelligence', cert2Desc:'Création de tableaux de bord interactifs, modélisation dimensionnelle et analyses avancées.', cert3:'Solutions Cloud Data', cert3Desc:'Implémentation sur Azure et GCP, entreposage de données en cloud et APIs.', cert4:'Leadership & Gestion', cert4Desc:'Direction d\'équipes, gestion de projets complexes et communication stratégique.', cert5:'Optimisation SQL', cert5Desc:'Analyse de performance, indexation avancée et architecture de base de données.', cert6:'Modernisation des Données', cert6Desc:'Migration de systèmes legacy, adoption de dbt et méthodologies modernes.' },
+            projects: { title:'Projets Phares', proj1:'Plateforme Intégrée BI', proj1Desc:'Conception et développement d\'une solution BI évolutive pour une compagnie d\'assurance multinationale, intégrant les données de multiples systèmes et créant des tableaux de bord exécutifs avec Power BI.', proj2:'Migration ETL vers le Cloud', proj2Desc:'Leadership dans la migration de 50+ processus ETL d\'Informatica on-premises vers Azure DataOps, améliorant le temps d\'exécution de 40%.', proj3:'Data Warehouse Moderne', proj3Desc:'Implémentation de DWH avec dbt sur Google BigQuery pour multinationale avec 2TB+ de données quotidiennes.', proj4:'Tableau de Bord Exécutif Time-to-Market', proj4Desc:'Création d\'un tableau de bord d\'intelligence métier en 6 semaines utilisant Power BI et modèles sémantiques avancés.', proj5:'Automatisation des Rapports', proj5Desc:'Système de reporterie automatisé avec Talend et Tableau réduisant le travail manuel de 80%.', proj6:'Optimisation des Requêtes SQL', proj6Desc:'Analyse et optimisation de requêtes sur Oracle Exadata, améliorant les performances de 60% sans changements d\'architecture.' },
+            contact: { title:'Contact', description:'N\'hésitez pas à me contacter pour discuter de vos projets de données, opportunités d\'emploi ou consultation.', name:'Nom', email:'Email', message:'Message', send:'Envoyer le message', sending:'Envoi...', success:'✓ Message envoyé avec succès! Je vous contacterai bientôt.', error:'✗ Erreur lors de l\'envoi. Réessayez ou contactez-moi par email.', labelName:'Nom', labelEmail:'Email', labelMessage:'Message', phone:'Téléphone' },
+            footer: { copyright:'© 2026 Antonio MORO DIAZ - Expert BI & Intégration de Données', subtitle:'Madrid, Espagne · Disponible pour projets à distance' },
+            services: { title:'Services de Conseil', intro:'Avez-vous besoin de transformer vos données en avantages concurrentiels? J\'offre une consultation spécialisée: de l\'architecture à la visualisation finale.', cta:'Demander une consultation', srv1:'Audit & Optimisation ETL', srv1Desc:'Analyse complète de vos processus ETL actuels, identification des goulets d\'étranglement et proposition d\'améliorations avec ROI mesurable.', srv2:'Développement BI & Dashboards', srv2Desc:'Conception et développement de tableaux de bord exécutifs avec Power BI ou Tableau qui transforment les données en décisions métier claires.', srv3:'Architecture de Données', srv3Desc:'Conception d\'architectures modernes (DWH, Data Lake, Lakehouse) adaptées à vos volumes, budget et équipe.', srv4:'Migration vers le Cloud', srv4Desc:'Planification et exécution des migrations on-premise vers le cloud avec risque minimum et continuité maximale.', srv5:'Optimisation SQL', srv5Desc:'Diagnostic et optimisation des requêtes SQL critiques sur Oracle, SQL Server ou BigQuery. Améliorations mesurables en jours.', srv6:'Formation & Mentoring', srv6Desc:'Formation pratique et mentoring pour les équipes data en ETL, SQL avancé, Power BI, dbt et bonnes pratiques en Data Engineering.' },
+            blog: { title:'Blog Technique', intro:'Articles sur ETL, BI, SQL avancé, architecture cloud et bonnes pratiques en Data Engineering — fruit de 20+ ans d\'expérience réelle.', filterAll:'Tous', filterETL:'ETL & Intégration', filterBI:'BI & Visualisation', filterSQL:'SQL & BD', filterCloud:'Cloud & Arch.', filterTools:'Outils' }
         },
         en: {
             nav: { about:'About', experience:'Experience', certifications:'Certifications', projects:'Projects', services:'Services', blog:'Blog', contact:'Contact' },
-            contact: { sending:'Sending...', success:'✓ Message sent! I will contact you soon.', error:'✗ Error sending. Try again or contact me by email.' },
-            footer: { copyright:'© 2026 Antonio MORO DIAZ — BI & Data Integration Expert' }
+            hero: { name:'Antonio MORO DIAZ', title:'BI Expert & Data Integration | Data Engineer', description:'Specialist in designing and optimizing ETL processes, BI and cloud solutions. 20+ years of experience in Data Analytics and international team leadership.', cta1:'Contact Me', cta2:'My LinkedIn' },
+            about: { title:'About', subtitle:'BI & Data Integration Expert', desc1:'With over 20 years of experience in designing, developing and optimizing BI solutions and complex ETL processes. Specialized in transforming data into actionable insights and leading multidisciplinary teams in international environments.', desc2:'I have solid expertise in ETL tools (Informatica, Talend, dbt), BI (Power BI, Tableau) and cloud technologies (Azure, GCP). My goal is to automate processes, optimize SQL queries and create scalable solutions that drive strategic decision-making in organizations.', languages:'Languages: Spanish (Native), English (Intermediate), French (C2)', location:'Location: Madrid, Spain', techStack:'Tech Stack', databases:'Databases', databasesDesc:'Oracle Exadata, SQL Server, MySQL, DB2, Google BigQuery', etl:'ETL/ELT', etlDesc:'Informatica PowerCenter, IICS, Talend, DataStage, ODI, dbt cloud', bi:'BI & Visualization', biDesc:'Power BI, Tableau, Google Data Studio, IBM Cognos Analytics, QlikView', cloud:'Cloud Platforms', cloudDesc:'Azure DataOps, Google Cloud Platform (GCP), API Integrations', languages2:'Languages', languagesDesc:'SQL (Optimization), Python (Pandas, NumPy), Bash Scripting, Java, XML', others:'Other', othersDesc:'Data Warehouse Modeling, Control-M, Salesforce, D3.js, MDX, DAX, Erwin' },
+            experience: { title:'Professional Experience', exp1:'BI & Data Integration Expert', exp1Company:'Soprasteria', exp1Date:'March 2018 - Today', exp1Desc:'✔️ Development and evolutionary maintenance of Data projects in international environment.<br>✔️ Implementation and optimization of ETL processes for data ingestion.<br>✔️ Migration and improvement of ETL tools and data management systems.<br>✔️ Team coordination and weekly follow-up with client teams.', exp2:'BI Expert', exp2Company:'Línea Directa Aseguradora', exp2Date:'March 2018 - January 2022', exp2Desc:'✔️ Leadership in project management and technical team coordination.<br>✔️ Interaction with users for requirements gathering and training.<br>✔️ Data design and modeling for creating reports and dashboards.', exp3:'BI Team Leader', exp3Company:'Accenture', exp3Date:'February 2015 - February 2018', exp3Desc:'✔️ BI project planning and management.<br>✔️ Design and development of DWH models and ETL processes.<br>✔️ Supervision of technical teams and user follow-up.', exp4:'BI Team Leader', exp4Company:'Soprasteria', exp4Date:'March 2013 - January 2015', exp4Desc:'✔️ Direction and task prioritization in Data Analytics projects.<br>✔️ Leadership of multidisciplinary teams of 10 people.<br>✔️ Validation of technical solutions and application development.', exp5:'BI Consultant', exp5Company:'IBM', exp5Date:'October 2010 - March 2013', exp5Desc:'✔️ Data integration via ETL and development of multidimensional structures.<br>✔️ Design of custom reports and dashboards according to business needs.<br>✔️ Identification and development of key visualizations for users.', exp6:'BI Consultant', exp6Company:'Consulting', exp6Date:'September 2001 - September 2010', exp6Desc:'✔️ Development of BI solutions for strategic decision-making.<br>✔️ Analysis of massive data and creation of dashboards for multiple clients.<br>✔️ Optimization of data extraction and transformation processes.' },
+            education: { title:'Education', degree:'Software Engineer', university:'University of Córdoba', year:'2001', description:'Solid training in programming, databases, distributed systems and software architecture.' },
+            certifications: { title:'Key Competencies', cert1:'ETL & Data Integration', cert1Desc:'Design of complex data flows, process optimization and solution architecture.', cert2:'Business Intelligence', cert2Desc:'Creation of interactive dashboards, dimensional modeling and advanced analytics.', cert3:'Cloud Data Solutions', cert3Desc:'Implementation on Azure and GCP, cloud data warehousing and APIs.', cert4:'Leadership & Management', cert4Desc:'Team management, complex project management and strategic communication.', cert5:'SQL Optimization', cert5Desc:'Performance analysis, advanced indexing and database architecture.', cert6:'Data Modernization', cert6Desc:'Migration of legacy systems, dbt adoption and modern methodologies.' },
+            projects: { title:'Featured Projects', proj1:'Integrated BI Platform', proj1Desc:'Design and development of a scalable BI solution for a multinational insurance company, integrating data from multiple systems and creating executive dashboards with Power BI.', proj2:'ETL Migration to Cloud', proj2Desc:'Leadership in migrating 50+ ETL processes from on-premises Informatica to Azure DataOps, improving execution time by 40%.', proj3:'Modern Data Warehouse', proj3Desc:'Implementation of DWH with dbt on Google BigQuery for multinational with 2TB+ of daily data.', proj4:'Executive Time-to-Market Dashboard', proj4Desc:'Creation of business intelligence dashboard in 6 weeks using Power BI and advanced semantic models.', proj5:'Report Automation', proj5Desc:'Automated reporting system with Talend and Tableau reducing manual work by 80%.', proj6:'SQL Query Optimization', proj6Desc:'Analysis and optimization of queries on Oracle Exadata, improving performance by 60% without architecture changes.' },
+            contact: { title:'Contact', description:'Feel free to contact me to discuss your data projects, job opportunities or consulting.', name:'Name', email:'Email', message:'Message', send:'Send Message', sending:'Sending...', success:'✓ Message sent successfully! I will contact you soon.', error:'✗ Error sending. Try again or contact me by email.', labelName:'Name', labelEmail:'Email', labelMessage:'Message', phone:'Phone' },
+            footer: { copyright:'© 2026 Antonio MORO DIAZ - BI & Data Integration Expert', subtitle:'Madrid, Spain · Available for remote projects' },
+            services: { title:'Consulting Services', intro:'Do you need to transform your data into competitive advantages? I offer specialized consulting: from architecture to final visualization.', cta:'Request consultation', srv1:'ETL Audit & Optimization', srv1Desc:'Complete analysis of your current ETL processes, bottleneck identification and improvement proposals with measurable ROI.', srv2:'BI Development & Dashboards', srv2Desc:'Design and development of executive dashboards with Power BI or Tableau that convert data into clear and actionable business decisions.', srv3:'Data Architecture', srv3Desc:'Design of modern architectures (DWH, Data Lake, Lakehouse) adapted to your volumes, budget and team.', srv4:'Cloud Migration', srv4Desc:'Planning and execution of on-premise to cloud migrations with minimal risk, maximum continuity and rigorous validation.', srv5:'SQL Optimization', srv5Desc:'Diagnosis and optimization of critical SQL queries on Oracle, SQL Server or BigQuery. Measurable improvements in days, not months.', srv6:'Training & Mentoring', srv6Desc:'Practical training and mentoring for data teams in ETL, advanced SQL, Power BI, dbt and best practices in Data Engineering.' },
+            blog: { title:'Technical Blog', intro:'Articles about ETL, BI, advanced SQL, cloud architecture and best practices in Data Engineering — the result of 20+ years of real experience.', filterAll:'All', filterETL:'ETL & Integration', filterBI:'BI & Visualization', filterSQL:'SQL & DB', filterCloud:'Cloud & Arch.', filterTools:'Tools' }
         }
     };
 
@@ -2154,10 +2178,84 @@ Sistemas legacy (SAP, Oracle)  → Informatica IICS</code></pre>
             localStorage.setItem('lang', lang);
             document.documentElement.lang = lang;
             this.renderNav();
+            this.updatePageContent();
             this.updateButtons();
-            if (document.getElementById('footerCopy')) {
-                document.getElementById('footerCopy').textContent = translations[lang].footer.copyright;
+        }
+        updatePageContent() {
+            const t = translations[this.currentLang];
+            // Hero
+            const heroH1 = document.querySelector('.hero h1'); if (heroH1) heroH1.textContent = t.hero.name;
+            const heroTitle = document.querySelector('.hero .title'); if (heroTitle) heroTitle.textContent = t.hero.title;
+            const heroDesc = document.querySelectorAll('.hero-content > p')[1]; if (heroDesc) heroDesc.textContent = t.hero.description;
+            const cta1 = document.querySelectorAll('.btn-primary')[0]; if (cta1) cta1.textContent = t.hero.cta1;
+            const cta2 = document.querySelectorAll('.btn-secondary')[0]; if (cta2) cta2.textContent = t.hero.cta2;
+            // About
+            const sectionH2 = document.querySelectorAll('section h2');
+            if (sectionH2[0]) sectionH2[0].textContent = t.about.title;
+            const aboutH3 = document.querySelector('.about-text h3'); if (aboutH3) aboutH3.textContent = t.about.subtitle;
+            const aboutP = document.querySelectorAll('.about-text p');
+            if (aboutP[0]) aboutP[0].textContent = t.about.desc1;
+            if (aboutP[1]) aboutP[1].textContent = t.about.desc2;
+            if (aboutP[2]) aboutP[2].textContent = t.about.languages;
+            if (aboutP[3]) aboutP[3].textContent = t.about.location;
+            const techH3 = document.querySelectorAll('.about-grid > div')[1]?.querySelector('h3'); if (techH3) techH3.textContent = t.about.techStack;
+            const skillCards = document.querySelectorAll('.skill-category');
+            const sk = [['databases','databasesDesc'],['etl','etlDesc'],['bi','biDesc'],['cloud','cloudDesc'],['languages2','languagesDesc'],['others','othersDesc']];
+            sk.forEach(([h,p], i) => { if (skillCards[i]) { skillCards[i].querySelector('h4').textContent = t.about[h]; skillCards[i].querySelector('p').textContent = t.about[p]; } });
+            // Experience
+            if (sectionH2[1]) sectionH2[1].textContent = t.experience.title;
+            const tl = document.querySelectorAll('.timeline-item');
+            for (let i = 1; i <= 6; i++) {
+                const item = tl[i-1]; if (!item) continue;
+                item.querySelector('h3').textContent = t.experience[`exp${i}`];
+                item.querySelectorAll('p')[0].textContent = t.experience[`exp${i}Company`];
+                item.querySelectorAll('p')[1].textContent = t.experience[`exp${i}Date`];
+                item.querySelectorAll('p')[2].innerHTML = t.experience[`exp${i}Desc`];
             }
+            // Education
+            if (sectionH2[2]) sectionH2[2].textContent = t.education.title;
+            const eduItems = document.querySelectorAll('#education .timeline-item');
+            if (eduItems[0]) { eduItems[0].querySelector('h3').textContent = t.education.degree; eduItems[0].querySelectorAll('p')[0].textContent = t.education.university; eduItems[0].querySelectorAll('p')[1].textContent = t.education.year; eduItems[0].querySelectorAll('p')[2].textContent = t.education.description; }
+            // Certifications
+            if (sectionH2[3]) sectionH2[3].textContent = t.certifications.title;
+            const certCards = document.querySelectorAll('.cert-card');
+            for (let i = 1; i <= 6; i++) { if (certCards[i-1]) { certCards[i-1].querySelector('h3').textContent = t.certifications[`cert${i}`]; certCards[i-1].querySelector('p:last-child').textContent = t.certifications[`cert${i}Desc`]; } }
+            // Projects
+            if (sectionH2[4]) sectionH2[4].textContent = t.projects.title;
+            const projCards = document.querySelectorAll('.project-card');
+            for (let i = 1; i <= 6; i++) { if (projCards[i-1]) { projCards[i-1].querySelector('h3').textContent = t.projects[`proj${i}`]; projCards[i-1].querySelector('p').textContent = t.projects[`proj${i}Desc`]; } }
+            // Contact form fields
+            const nameInput = document.querySelector('input[name="name"]'); if (nameInput) nameInput.placeholder = t.contact.name;
+            const emailInput = document.querySelector('input[name="email"]'); if (emailInput) emailInput.placeholder = t.contact.email;
+            const msgInput = document.querySelector('textarea[name="message"]'); if (msgInput) msgInput.placeholder = t.contact.message;
+            // Services
+            const servH2 = document.querySelector('#services h2'); if (servH2) servH2.textContent = t.services.title;
+            const servIntro = document.querySelector('.services-intro'); if (servIntro) servIntro.textContent = t.services.intro;
+            const srvCards = document.querySelectorAll('.service-card');
+            for (let i = 1; i <= 6; i++) {
+                if (!srvCards[i-1]) continue;
+                srvCards[i-1].querySelector('h3').textContent = t.services[`srv${i}`];
+                srvCards[i-1].querySelector('p').textContent = t.services[`srv${i}Desc`];
+                const cta = srvCards[i-1].querySelector('.service-cta'); if (cta) cta.textContent = t.services.cta;
+            }
+            // Blog
+            const blogH2 = document.querySelector('#blog h2'); if (blogH2) blogH2.textContent = t.blog.title;
+            const blogIntro = document.querySelector('.blog-intro-text'); if (blogIntro) blogIntro.textContent = t.blog.intro;
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const filterKeys = ['filterAll','filterETL','filterBI','filterSQL','filterCloud','filterTools'];
+            filterBtns.forEach((btn, i) => { if (filterKeys[i]) btn.textContent = t.blog[filterKeys[i]]; });
+            // Contact
+            const contactH2 = document.querySelector('#contact h2'); if (contactH2) contactH2.textContent = t.contact.title;
+            const formLabels = document.querySelectorAll('.contact-form .form-group label');
+            if (formLabels[0]) formLabels[0].textContent = t.contact.labelName;
+            if (formLabels[1]) formLabels[1].textContent = t.contact.labelEmail;
+            if (formLabels[2]) formLabels[2].textContent = t.contact.labelMessage;
+            const phoneH4 = document.querySelector('.contact-info .contact-item:nth-child(2) h4'); if (phoneH4) phoneH4.textContent = t.contact.phone;
+            const submitBtn2 = document.querySelector('.submit-btn'); if (submitBtn2) submitBtn2.textContent = t.contact.send;
+            // Footer
+            const footerPs = document.querySelectorAll('footer p');
+            if (footerPs[0]) footerPs[0].textContent = t.footer.copyright;
+            if (footerPs[1]) footerPs[1].textContent = t.footer.subtitle;
         }
         renderNav() {
             const t = translations[this.currentLang];
@@ -2188,32 +2286,14 @@ Sistemas legacy (SAP, Oracle)  → Informatica IICS</code></pre>
             if (!btn || !menu || !sel) return;
             btn.addEventListener('click', e => { e.preventDefault(); sel.classList.toggle('open'); });
             menu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', e => {
-                    e.preventDefault();
-                    this.setLanguage(link.getAttribute('data-lang'));
-                    sel.classList.remove('open');
-                });
+                link.addEventListener('click', e => { e.preventDefault(); this.setLanguage(link.getAttribute('data-lang')); sel.classList.remove('open'); });
             });
             document.addEventListener('click', e => { if (!sel.contains(e.target)) sel.classList.remove('open'); });
         }
-        attachThemeListener() {
-            document.getElementById('themeToggle')?.addEventListener('click', () => this.toggleTheme());
-        }
-        toggleTheme() {
-            document.body.classList.toggle('dark-mode');
-            const isDark = document.body.classList.contains('dark-mode');
-            localStorage.setItem('theme', isDark ? 'dark' : 'light');
-            this.updateThemeIcon();
-        }
-        loadThemePreference() {
-            if (localStorage.getItem('theme') === 'dark') document.body.classList.add('dark-mode');
-            this.updateThemeIcon();
-        }
-        updateThemeIcon() {
-            const isDark = document.body.classList.contains('dark-mode');
-            const icon = document.querySelector('.theme-icon');
-            if (icon) icon.textContent = isDark ? '☀️' : '🌙';
-        }
+        attachThemeListener() { document.getElementById('themeToggle')?.addEventListener('click', () => this.toggleTheme()); }
+        toggleTheme() { document.body.classList.toggle('dark-mode'); localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light'); this.updateThemeIcon(); }
+        loadThemePreference() { if (localStorage.getItem('theme') === 'dark') document.body.classList.add('dark-mode'); this.updateThemeIcon(); }
+        updateThemeIcon() { const icon = document.querySelector('.theme-icon'); if (icon) icon.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙'; }
     }
 
     // ============================================================
@@ -2322,10 +2402,6 @@ Sistemas legacy (SAP, Oracle)  → Informatica IICS</code></pre>
     </script>
 </body>
 </html>
-                },
-                hero: {
-                    name: 'Antonio MORO DIAZ',
-                    title: 'Experto BI & Integración de Datos | Data Engineer',
                     description: 'Especialista en diseño y optimización de procesos ETL, BI y soluciones cloud. Más de 20 años de experiencia en Data Analytics y liderazgo de equipos internacionales.',
                     cta1: 'Contactarme',
                     cta2: 'Mi LinkedIn'
